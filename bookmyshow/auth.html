@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: url("https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=3276&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+      }
+      .company-name {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff4b2b;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+      .auth-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .auth-container h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+      }
+      .auth-container .btn-primary {
+        background-color: #ff4b2b;
+        border-color: #ff4b2b;
+      }
+      .register-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+      }
+      .error-message {
+        display: none;
+        color: #ff4b2b;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="company-name">CINESPHERE</div>
+    <div class="auth-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email address</label>
+          <input type="email" class="form-control" id="login-email" required />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="login-password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="error-message" id="login-error"></p>
+      <a href="register.html" class="register-link">New user? Register here</a>
+    </div>
+
+    <!--Firebase App(core fb sdk)-->
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD4NwgWQG2O56_eDabAD_0OM2AomIPjXvE",
+        authDomain: "booking-bba5e.firebaseapp.com",
+        projectId: "booking-bba5e",
+        storageBucket: "booking-bba5e.appspot.com",
+        messagingSenderId: "247365371928",
+        appId: "1:247365371928:web:02bcf59fc210366bebdb6d",
+      };
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth(app);
+
+      // Login function
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("login-email").value;
+          const password = document.getElementById("login-password").value;
+          const errorElement = document.getElementById("login-error");
+
+          auth
+            .signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+              // Clear any previous error messages
+              errorElement.style.display = "none";
+
+              // Redirect to the main page upon successful login
+              alert("Login successful!");
+              window.location.href = "index.html"; // Redirect to main page
+            })
+            .catch((error) => {
+              // Display error message
+              errorElement.textContent = error.message;
+              errorElement.style.display = "block"; // Show the error message
+            });
+        });
+    </script>
+  </body>
+</html>

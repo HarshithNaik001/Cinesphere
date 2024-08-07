@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#movie-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+
+.title-part-red {
+    color: red;   
+    padding: 0 5px; 
+    border: 1px solid red; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.title-part-yellow {
+    color: #FFD700; 
+    padding: 0 5px; 
+    border: 1px solid #FFD700;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.title-part-2{
+    color: #333;
+    font-style: italic;
+    padding: 0 5px; 
+}
+.title-part-3{
+    color: orangered;
+    font-weight: bolder;
+}
+
+
+#movie-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#show-timings {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#show-timings li {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    list-style: none;
+    text-align: center;
+}
+
+#cinema-details {
+    font-size: 1.1rem;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}

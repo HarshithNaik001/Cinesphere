@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book My Show</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD4NwgWQG2O56_eDabAD_0OM2AomIPjXvE",
+        authDomain: "booking-bba5e.firebaseapp.com",
+        projectId: "booking-bba5e",
+        storageBucket: "booking-bba5e.appspot.com",
+        messagingSenderId: "247365371928",
+        appId: "1:247365371928:web:02bcf59fc210366bebdb6d",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          // User is not authenticated, redirect to login page
+          window.location.href = "auth.html";
+        } else {
+          // User is authenticated, load the main content
+          document.getElementById("main-content").style.display = "block";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Initially hide the content until authentication check is complete -->
+    <div id="main-content" style="display: none">
+      <header class="bg-dark text-white py-3">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1 class="h3">Cine Sphere</h1>
+            <nav>
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="container my-5">
+        <section class="showcase">
+          <h2 class="text-center mb-4">Now Showing</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="Pics/DW.jpeg" class="card-img-top" alt="Movie 1" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Deadpool & Wolverine</h5>
+                  <a href="details.html?movie=1" class="btn btn-dark"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="Pics/Kalki.jpeg" class="card-img-top" alt="Movie 2" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Kalki 2898 AD</h5>
+                  <a href="details.html?movie=2" class="btn btn-dark"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="Pics/Dm4.jpeg" class="card-img-top" alt="Movie 3" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Despicable ME 4</h5>
+                  <a href="details.html?movie=3" class="btn btn-dark"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Book My Show</p>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

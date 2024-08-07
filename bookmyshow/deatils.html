@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <header class="bg-dark text-white py-3">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="h3">CINE SPHERE</h1>
+          <nav>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container my-5">
+      <h2 class="text-center mb-4">Movie Details</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img id="movie-poster" src="" alt="Movie Poster" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <h3 id="movie-title">Movie Title</h3>
+          <p id="movie-description">Movie description goes here...</p>
+          <h4>Show Timings</h4>
+          <ul id="show-timings" class="list-unstyled">
+            <li>12:00 PM</li>
+            <li>6:00 PM</li>
+            <li>10:00 PM</li>
+          </ul>
+          <h4>Cinema</h4>
+          <p id="cinema-details">Cinema details go here...</p>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2024 cinesphere</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="details.js"></script>
+  </body>
+</html>

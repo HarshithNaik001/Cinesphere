@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seat Arrangement</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="seat.css" />
+  </head>
+  <body>
+    <header class="bg-dark text-white py-3">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="h3">CINE SPHERE</h1>
+          <nav>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container my-5">
+      <h2 class="text-center mb-4">Seat Arrangement</h2>
+      <div id="movie-details" class="mb-4">
+        <h3 id="movie-title">Movie Title</h3>
+        <p id="show-time">Show Time: <span id="movie-time"></span></p>
+      </div>
+      <div id="seat-arrangement">
+        <div id="seats-container" class="d-flex flex-wrap">
+          <!-- Seats will be added dynamically -->
+        </div>
+        <button id="book-now" class="btn btn-primary mt-4">Book Now</button>
+      </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2024 cinesphere</p>
+    </footer>
+
+    <!-- Firebase SDK (Non-modular version) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD4NwgWQG2O56_eDabAD_0OM2AomIPjXvE",
+        authDomain: "booking-bba5e.firebaseapp.com",
+        projectId: "booking-bba5e",
+        storageBucket: "booking-bba5e.appspot.com",
+        messagingSenderId: "247365371928",
+        appId: "1:247365371928:web:02bcf59fc210366bebdb6d",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script src="seat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+/* seats.html styles */
+
+#seats-container {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.seat.selected {
+    background-color: green;
+}
+
+.seat.booked {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    #seats-container {
+        grid-template-columns: repeat(10, 40px);
+    }
+}
+
+@media (max-width: 576px) {
+    #seats-container {
+        grid-template-columns: repeat(5, 40px);
+    }
+}
